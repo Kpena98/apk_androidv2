@@ -23,6 +23,7 @@ public class DriverManager {
     public void iniciarWebDriver(String testName) throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
+        System.out.println("URLBS: " + url);
         caps.setCapability("device", "Samsung Galaxy S22");
         caps.setCapability("os_version", "12.0");
 
