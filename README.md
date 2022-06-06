@@ -1,2 +1,14 @@
-# apk_androidv2
-Proyecto con variables de entornos
+ ### Bienvenidos
+
+Proyecto v2 con variables entornos
+
+Proyecto Java con Graddle, utilizando herramienta Cucumber para pruebas funcionales. 
+Ejecución remota a través de Browserstack.
+
+Tasks disponibles para ejecución:
+- smokeTests
+- regresion
+
+Ejemplo ejecución por consola (windows):
+
+.\gradlew.bat smokeTests
