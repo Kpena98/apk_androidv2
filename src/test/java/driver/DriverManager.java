@@ -21,6 +21,7 @@ public class DriverManager {
 
 
     public void iniciarWebDriver(String testName) throws MalformedURLException {
+        Map<String,String> env = System.getenv();Set<String> keys = env.keySet();for (String key: keys){System.out.println(key + " = "+env.get(key));}
         DesiredCapabilities caps = new DesiredCapabilities();
 
         System.out.println("URLBS: " + url);
