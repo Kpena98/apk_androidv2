@@ -9,29 +9,24 @@ Feature: Flujo  Delivery Android
     And Seleccionar "<Pais>"
     And Presionar boton Next luego de elegir "<Pais>"
     When Dentro del mercado de "<Pais>" acceder a pedidos y hacer login con "<User>" y "<Pass>" registrada
- #   Then Iniciar orden tipo delivery y seleccionar "<Producto>"
+    Then Iniciar orden tipo delivery indicar "<Direccion>" y seleccionar "<Producto>"
     @regresion
     Examples:
       | Pais                   | User                   | Pass          | Producto |
       |Argentina              | pruebaautoqa@gmail.com |  Pruebas_2022 |           |
-      |Brasil                 | pruebaautoqa@gmail.com |Pruebas_2022         |          |
-      |Chile                  | pruebaautoqa@gmail.com|Pruebas_2022          |          |
-      |Colombia               | pruebaautoqa@gmail.com|Pruebas_2022           |          |
-      |Costa Rica             | pruebaautoqa@gmail.com|Pruebas_2022          |          |
-      |México                 | pruebaautoqa@gmail.com|Pruebas_2022           |          |
-      |Panamá                 | pruebaautoqa@gmail.com|Pruebas_2022          |          |
-      |Puerto Rico            | pruebaautoqa@gmail.com|Pruebas_2022           |          |
-      |Uruguay                | pruebaautoqa@gmail.com|Pruebas_2022             |          |
+      |Brasil                 | pruebaautoqabra@gmail.com |Pruebas_2022         |          |
+      |Chile                  | pruebaautoqachi@gmail.com|Pruebas_2022          |          |
+      |Colombia               | pruebaautoqacol@gmail.com|Pruebas_2022           |          |
+      |Costa Rica             | pruebaautoqacos@gmail.com|Pruebas_2022          |          |
+      |México                 | pruebaautoqamex@gmail.com|Pruebas_2022           |          |
+      |Panamá                 | pruebaautoqapan@gmail.com|Pruebas_2022          |          |
+      |Puerto Rico            | pruebaautoqapuer@gmail.com|Pruebas_2022           |          |
+      |Uruguay                | pruebaautoqauru@gmail.com|Pruebas_2022             |          |
     @smokeTest
     Examples:
-      | Pais       |     User               | Pass          | Producto |
-      | Venezuela | pruebaautoqa@gmail.com | Pruebas_2022  |           |
-      | Perú | pruebaautoqa@gmail.com | Pruebas_2022  ||
-      | Colombia | pruebaautoqa@gmail.com | Pruebas_2022  ||
-      | Panamá | pruebaautoqa@gmail.com | Pruebas_2022  |  |
-      |Chile |  pruebaautoqa@gmail.com | Pruebas_2022  |   |
-      |Argentina | pruebaautoqa@gmail.com | Pruebas_2022  ||
-
+      | Pais       |     User               | Pass          | Direccion                     | Producto |
+   #   |Brasil |  pruebaautoqabra@gmail.com | Pruebas_2022  |           |                   |
+      |Chile | pruebaautoqachi@gmail.com | Pruebas_2022  |  Paseo Ahumada 100|  Cajita Feliz Hamburguesa Palta   |
 
 
 

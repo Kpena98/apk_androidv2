@@ -1,7 +1,5 @@
  ### Bienvenidos
 
-Proyecto v2 con variables entornos
-
 Proyecto Java con Graddle, utilizando herramienta Cucumber para pruebas funcionales. 
 Ejecución remota a través de Browserstack.
 

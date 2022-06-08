@@ -36,7 +36,7 @@ public class ExtentReportHelper {
             nameReport = nameReport.replace(" ", "");
         }
         htmlReporter = new ExtentHtmlReporter("src/test/resources/output/report/"
-                + nameReport + date + ".html");
+                + nameReport + ".html");
 
         htmlReporter.config().setDocumentTitle("Ejecucion de pruebas");
         htmlReporter.config().setReportName(nameReport);

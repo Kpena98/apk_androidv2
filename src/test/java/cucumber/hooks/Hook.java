@@ -19,7 +19,7 @@ public class Hook {
     @Before
     public void setUp(Scenario scenario) throws IOException {
         nombreEscenario = scenario.getName();
-        Logger.iniciarLog(scenario.getName(), "Ejecucion Test");
+        Logger.iniciarLog(scenario.getName(), "Pruebas Completas en: " + nombreEscenario);
     }
 
 

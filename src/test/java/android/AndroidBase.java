@@ -6,15 +6,13 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Helpers;
 
 import java.util.List;
+import java.util.Set;
 
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static java.time.Duration.ofMillis;
@@ -44,6 +42,15 @@ public class AndroidBase {
     public WebElement findElement(String xpath) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
+    public WebElement findElementId(String id) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
+    }
+
+    public void toFrame(String id) {
+        Set<String> contextNames = driver.getContextHandles();
+        driver.context((String) contextNames.toArray()[1]);
+    }
+
 
     public void  type (String xpath, String text) {
        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
@@ -70,6 +77,26 @@ public class AndroidBase {
         hp.sleep(2);
 
     }
+
+    public boolean scrollAndFind(By by, String attribute, String text) throws InterruptedException {
+        int i = 0;
+        boolean flag = false;
+        do {
+            List<AndroidElement> elements = driver.findElements(by);
+            for (AndroidElement element : elements) {
+                hp.sleep(1);
+                if (element.getAttribute(attribute).contains(text)) {
+                    flag = true;
+                    break;
+                }
+            }
+            scroll(driver, 0.5, 0.5, 0.5, 0.25);
+            i++;
+        }
+        while (i <= 8 && !flag);
+        return flag;
+    }
+
 
 
     public boolean  scrollToTextAndClick(By by, String attribute, String text) throws InterruptedException {

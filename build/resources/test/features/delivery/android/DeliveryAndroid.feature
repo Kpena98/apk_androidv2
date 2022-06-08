@@ -8,42 +8,25 @@ Feature: Flujo  Delivery Android
   Scenario Outline: flujo de pedido delivery con usuario registrado
     And Seleccionar "<Pais>"
     And Presionar boton Next luego de elegir "<Pais>"
-    When Dentro del mercado acceder a pedidos y hacer login con "<User>" y "<Pass>" registrada
-    Then Seleccionar "<Producto>"
+    When Dentro del mercado de "<Pais>" acceder a pedidos y hacer login con "<User>" y "<Pass>" registrada
+    Then Iniciar orden tipo delivery indicar "<Direccion>" y seleccionar "<Producto>"
     @regresion
     Examples:
       | Pais                   | User                   | Pass          | Producto |
-      | Argentina              | pruebaautoqa@gmail.com | Pruebas_2022  |           |
-      |Aruba en Curaçao       |                        |               |         |
-      |Brasil                 |                        |               |          |
-      |Chile                  |                        |               |          |
-      |Colombia               |                        |               |          |
-      |Costa Rica             |                        |               |          |
-      |Curacao                |                        |               |          |
-      |Ecuador                |                        |               |          |
-      |Guyane Française       |                        |               |          |
-      |Guadeloupe             |                        |               |          |
-      |Guatemala              |                        |               |          |
-      |Martinique             |                        |               |          |
-      |México                 |                        |               |          |
-      |Panamá                 |                        |               |          |
-      |Perú                   |                        |               |          |
-      |Puerto Rico            |                        |               |          |
-      |Quality ES             |                        |               |          |
-      |St.Croix & St.Thomas   |                        |               |          |
-      |Trinidad and Tobago    |                        |               |          |
-      |Uruguay                |                        |               |          |
-      | Venezuela             |                        |               |          |
+      |Argentina              | pruebaautoqa@gmail.com |  Pruebas_2022 |           |
+      |Brasil                 | pruebaautoqabra@gmail.com |Pruebas_2022         |          |
+      |Chile                  | pruebaautoqachi@gmail.com|Pruebas_2022          |          |
+      |Colombia               | pruebaautoqacol@gmail.com|Pruebas_2022           |          |
+      |Costa Rica             | pruebaautoqacos@gmail.com|Pruebas_2022          |          |
+      |México                 | pruebaautoqamex@gmail.com|Pruebas_2022           |          |
+      |Panamá                 | pruebaautoqapan@gmail.com|Pruebas_2022          |          |
+      |Puerto Rico            | pruebaautoqapuer@gmail.com|Pruebas_2022           |          |
+      |Uruguay                | pruebaautoqauru@gmail.com|Pruebas_2022             |          |
     @smokeTest
     Examples:
-      | Pais       |     User               | Pass          | Producto |
-      | Venezuela | pruebaautoqa@gmail.com | Pruebas_2022  |           |
-      | Perú | pruebaautoqa@gmail.com | Pruebas_2022  ||
-      | Colombia | pruebaautoqa@gmail.com | Pruebas_2022  ||
-      | Panamá | pruebaautoqa@gmail.com | Pruebas_2022  |  |
-      |Chile |  pruebaautoqa@gmail.com | Pruebas_2022  |   |
-      |Argentina | pruebaautoqa@gmail.com | Pruebas_2022  ||
-
+      | Pais       |     User               | Pass          | Direccion                     | Producto |
+   #   |Brasil |  pruebaautoqabra@gmail.com | Pruebas_2022  |           |                   |
+      |Chile | pruebaautoqachi@gmail.com | Pruebas_2022  |  Avenida camilo Henríquez 3060, Puente ALto|  McCombo Mediano Doble McFiesta con Queso    |
 
 
 

@@ -8,12 +8,14 @@ import io.cucumber.java.en.When;
 import pages.CountrySelectionPage;
 import pages.MainPage;
 import pages.OrdersPage;
+import pages.PaymentPage;
 
 public class DeliveryAndroidSteps {
 
     private final CountrySelectionPage cs = new CountrySelectionPage();
     private final MainPage mp = new MainPage();
     private final OrdersPage op = new OrdersPage();
+    private final PaymentPage pp = new PaymentPage();
 
     @Given("Seleccionar {string}")
     public void seleccionar(String string) throws ElementoNoVisibleException, InterruptedException {
@@ -34,14 +36,28 @@ public class DeliveryAndroidSteps {
         else {
             mp.goToLogin(user, pass);
         }
-    /* mp.selectCountry(pais);
-        mp.goToPedidos();
-        mp.comprobarPedidos();*/
+        mp.comprobarPolicy();
+
     }
 
-    @Then("Iniciar orden tipo delivery y seleccionar {string}")
-    public void iniciarOrdenTipoDeliveryYSeleccionar(String string) {
-        op.initOrder();
+    @Then("Iniciar orden tipo delivery indicar {string} y seleccionar {string}")
+    public void iniciarOrdenTipoDeliveryYSeleccionar(String direccion, String producto) {
+        op.comprobarBadLogin();
+        op.typeOrder("McDelivery");
+        op.initOrder(direccion);
+        op.selectOrder(producto);
+        pp.paymentData(direccion);
+        pp.pay(producto);
+    }
+
+    @Then("Iniciar orden tipo pickup indicar {string} y seleccionar {string}")
+    public void iniciarOrdenTipoPickupYSeleccionar(String direccion, String producto) {
+        op.comprobarBadLogin();
+        op.typeOrder("Pickup");
+        op.initOrderPickup(direccion);
+        op.selectOrder(producto);
+        pp.paymentData(direccion);
+        pp.pay(producto);
     }
 
 }

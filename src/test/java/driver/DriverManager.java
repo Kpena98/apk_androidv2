@@ -2,6 +2,7 @@ package driver;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -15,16 +16,16 @@ public class DriverManager {
 
     private static String url = System.getenv("URLBS");
 
+
+
     public static final String URL = "https://" + BrowserStackHelper.USERNAME + ":"
             + BrowserStackHelper.AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 
 
     public void iniciarWebDriver(String testName) throws MalformedURLException {
-        Map<String,String> env = System.getenv();Set<String> keys = env.keySet();for (String key: keys){System.out.println(key + " = "+env.get(key));}
         DesiredCapabilities caps = new DesiredCapabilities();
 
-        System.out.println("URLBS: " + url);
         caps.setCapability("device", "Samsung Galaxy S22");
         caps.setCapability("os_version", "12.0");
 
@@ -43,8 +44,8 @@ public class DriverManager {
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", "Android Demo ");
         caps.setCapability("name", testName);
-        caps.setCapability("build", "Android Demo - Ejecucion Test");
-
+        caps.setCapability("build", "Android Pruebas Completas Delivery & Pickup Bitrise");
+       // caps.setCapability("build", "Android Pruebas Completas Delivery & Pickup");
         //Configuracion para visualizacion de los logs.
         caps.setCapability("browserstack.debug", "true");
         caps.setCapability("browserstack.console", "verbose");
