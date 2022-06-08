@@ -25,7 +25,8 @@ public class ExtentReportHelper {
     private static ThreadLocal<Integer> step = new ThreadLocal<Integer>();
 
 
-    public static void startReport(String nameReport, String context, String host, String ambiente) throws IOException {
+    public static void startReport( String context, String host, String ambiente) throws IOException {
+        String nameReport = "flujoEndToEnd";
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYYHH:mm:ss");
         Date fecha = new Date();
         String date = sdf.format(fecha);

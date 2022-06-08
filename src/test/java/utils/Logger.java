@@ -10,7 +10,7 @@ public class Logger {
     private static org.slf4j.Logger log;
 
     public static void iniciarLog(String nombreTest, String ejecucion) throws IOException {
-        ExtentReportHelper.startReport(nombreTest, ejecucion, "Mc Donalds Ecommerce", "QA");
+        ExtentReportHelper.startReport( ejecucion, "Mc Donalds Ecommerce", "QA");
         ExtentReportHelper.creteNameTest(nombreTest);
         log = LoggerFactory.getLogger(utils.Logger.class);
         log.info("Se inicia reporte para test[" + nombreTest + "], ejecución[" + ejecucion + "]");

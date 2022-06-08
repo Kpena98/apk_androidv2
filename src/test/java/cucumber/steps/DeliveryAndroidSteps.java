@@ -9,6 +9,7 @@ import pages.CountrySelectionPage;
 import pages.MainPage;
 import pages.OrdersPage;
 import pages.PaymentPage;
+import utils.Logger;
 
 public class DeliveryAndroidSteps {
 
@@ -48,6 +49,7 @@ public class DeliveryAndroidSteps {
         op.selectOrder(producto);
         pp.paymentData(direccion);
         pp.pay(producto);
+        Logger.pass("Se selecciona el producto " + producto);
     }
 
     @Then("Iniciar orden tipo pickup indicar {string} y seleccionar {string}")
@@ -58,6 +60,7 @@ public class DeliveryAndroidSteps {
         op.selectOrder(producto);
         pp.paymentData(direccion);
         pp.pay(producto);
+        Logger.pass("Se selecciona el producto " + producto);
     }
 
 }
